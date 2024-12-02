@@ -70,14 +70,14 @@ console.log(animals[0]);
 const apple = {
   isEaten: false,
   eat: function () {
-    this.isEaten ? "le fruit a déjà été mangé" : (this.isEaten = true);
+    return this.isEaten ? "le fruit a déjà été mangé" : (this.isEaten = true);
   },
 };
 
 /**
  * -------------------------------------------------------
- * 6 - En manipulant l'objet, afficher "le fruit a été mangé"
+ * 6 - En manipulant l'objet, afficher "le fruit a déjà été mangé"
  * -------------------------------------------------------
  */
-apple.isEaten = true;
-console.log(apple.eat);
+apple.eat();
+console.log(apple.eat());
