@@ -1,4 +1,10 @@
 body img {
-  max-width: 95%;
+  max-width: 300px;
   border-radius: 25px;
+}
+body {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
 }

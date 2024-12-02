@@ -12,6 +12,7 @@ let videos = [];
 let body = document.body;
 for (j = 0; j < 8; j++) {
   let test = {
+    minia: "images/minia.png",
     title: "title" + j,
     channel: "channel" + j,
     view: "view" + j,
@@ -19,30 +20,27 @@ for (j = 0; j < 8; j++) {
   };
   videos.push(test);
 }
-function createElement(tag) {
-  return document.createElement(tag);
+function createElement(i) {
+  let video = document.createElement("div");
+  let img = document.createElement("img");
+  let title = document.createElement("h3");
+  let channel = document.createElement("div");
+  let view = document.createElement("h4");
+  let date = document.createElement("h4");
+  body.appendChild(video);
+  video.appendChild(img);
+  video.appendChild(title);
+  video.appendChild(channel);
+  video.appendChild(view);
+  video.appendChild(date);
+  img.setAttribute("src", videos[i].minia);
+  title.innerHTML = videos[i].title;
+  channel.innerHTML = videos[i].channel;
+  view.innerHTML = videos[i].view;
+  date.innerHTML = videos[i].date;
 }
+
 for (i = 0; i < videos.length; i++) {
-  let videos = createElement("div");
-  let img = createElement("img");
-  let title = createElement("h3");
-  let channel = createElement("div");
-  let pp = createElement("img");
-  let nameChan = createElement("h4");
-  let view = createElement("h4");
-  let date = createElement("h4");
-  videos.classList.add("videos" + (i + 1));
-  body.appendChild(videos);
-  videos.appendChild(img);
-  videos.appendChild(title);
-  videos.appendChild(channel);
-  channel.appendChild(pp);
-  channel.appendChild(nameChan);
-  videos.appendChild(view);
-  videos.appendChild(date);
-  title.innerHTML = "Vidéo n°" + (i + 1);
-  body.style.display = "flex";
-  body.style.justifyContent = "space-between";
-  img.setAttribute("src", "images/minia.png");
+  createElement(i);
 }
 console.log(body);
